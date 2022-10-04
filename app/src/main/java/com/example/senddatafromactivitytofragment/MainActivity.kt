@@ -22,8 +22,8 @@ class MainActivity : AppCompatActivity() {
             val bundle = Bundle()
             bundle.putString("string", sendText.text.toString())
             fragment.arguments = bundle
-            supportFragmentManager.beginTransaction().replace(R.id.frameLayout, fragment)
-                .commit()
+
+            supportFragmentManager.beginTransaction().replace(R.id.frameLayout, fragment).commit()
         }
     }
 }

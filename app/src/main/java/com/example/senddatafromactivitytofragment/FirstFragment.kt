@@ -9,6 +9,7 @@ import android.widget.TextView
 
 class FirstFragment : Fragment() {
     private lateinit var tvText: TextView
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -19,7 +20,7 @@ class FirstFragment : Fragment() {
         val data = arguments
         tvText.text = data!!.get("string").toString()
 
-        return super.onCreateView(inflater, container, savedInstanceState)
+        return view
     }
 
 }
