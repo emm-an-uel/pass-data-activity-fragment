@@ -8,24 +8,18 @@ import android.view.ViewGroup
 import android.widget.TextView
 
 class FirstFragment : Fragment() {
-
-    lateinit var text: String
-
+    private lateinit var tvText: TextView
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        val view = inflater.inflate(R.layout.fragment_first, container, false)
+        tvText = view.findViewById(R.id.TextView)
+        val data = arguments
+        tvText.text = data!!.get("string").toString()
 
-        val activity = MainActivity()
-        text = activity.getMyData()
-
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_first, container, false)
+        return super.onCreateView(inflater, container, savedInstanceState)
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-        view.findViewById<TextView>(R.id.TextView).text = text
-    }
 }
