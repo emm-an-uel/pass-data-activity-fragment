@@ -19,7 +19,6 @@ class MainActivity : AppCompatActivity() {
 
         button.setOnClickListener() {
             val fragment = DisplayTextFragment.newInstance(sendText.text.toString())
-            val bundle = Bundle()
 
             supportFragmentManager.beginTransaction().replace(R.id.frameLayout, fragment).commit()
         }
