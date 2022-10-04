@@ -18,10 +18,8 @@ class MainActivity : AppCompatActivity() {
         sendText = findViewById(R.id.editText)
 
         button.setOnClickListener() {
-            val fragment = FirstFragment()
+            val fragment = DisplayTextFragment.newInstance(sendText.text.toString())
             val bundle = Bundle()
-            bundle.putString("string", sendText.text.toString())
-            fragment.arguments = bundle
 
             supportFragmentManager.beginTransaction().replace(R.id.frameLayout, fragment).commit()
         }
