@@ -8,23 +8,23 @@ import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
 
-    lateinit var etId: EditText
     lateinit var etName: EditText
-    lateinit var etRoll: EditText
+    lateinit var etAge: EditText
+    lateinit var etGender: EditText
     lateinit var btnSend: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        etId = findViewById(R.id.etId)
         etName = findViewById(R.id.etName)
-        etRoll = findViewById(R.id.etRoll)
+        etAge = findViewById(R.id.etAge)
+        etGender = findViewById(R.id.etGender)
         btnSend = findViewById(R.id.btnSend)
 
         btnSend.setOnClickListener {
             val bundle = Bundle()
-            bundle.putString("id", etId.text.toString())
+            bundle.putString("name", etName.text.toString())
             val displayDataFragment = DisplayDataFragment()
             displayDataFragment.arguments = bundle
 

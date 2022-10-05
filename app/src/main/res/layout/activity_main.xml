@@ -22,7 +22,7 @@
         app:layout_constraintVertical_bias="0.247" />
 
     <EditText
-        android:id="@+id/etId"
+        android:id="@+id/etName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Enter name"
@@ -33,24 +33,24 @@
         tools:layout_editor_absoluteX="0dp" />
 
     <EditText
-        android:id="@+id/etName"
+        android:id="@+id/etAge"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:hint="Enter age"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etId"
+        app:layout_constraintTop_toBottomOf="@+id/etName"
         app:layout_constraintVertical_bias="0.037"
         tools:layout_editor_absoluteX="10dp" />
 
     <EditText
-        android:id="@+id/etRoll"
+        android:id="@+id/etGender"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:hint="Enter gender"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etName"
+        app:layout_constraintTop_toBottomOf="@+id/etAge"
         app:layout_constraintVertical_bias="0.047"
         tools:layout_editor_absoluteX="10dp" />
 

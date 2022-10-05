@@ -7,9 +7,23 @@
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
-        android:id="@+id/tvId"
+        android:id="@+id/tvName"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:text="@string/hello_blank_fragment" />
+
+    <TextView
+        android:id="@+id/tvAge"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="200dp"
+        android:layout_height="match_parent"
+        android:text="@string/hello_blank_fragment" />
+
+    <TextView
+        android:id="@+id/tvGender"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="30dp"
         android:text="@string/hello_blank_fragment" />
 
 </FrameLayout>
