@@ -25,12 +25,11 @@ class MainActivity : AppCompatActivity() {
         btnSend.setOnClickListener {
             val bundle = Bundle()
             bundle.putString("id", etId.text.toString())
-            bundle.putString("name", etName.text.toString())
-            bundle.putString("roll", etRoll.text.toString())
+            val displayDataFragment = DisplayDataFragment()
+            displayDataFragment.arguments = bundle
 
-            val intent = Intent(this, SecondActivity::class.java)
-            intent.putExtras(bundle)
-            startActivity(intent)
+            supportFragmentManager.beginTransaction().replace(R.id.frameLayout, displayDataFragment)
+                .commit()
         }
     }
 
