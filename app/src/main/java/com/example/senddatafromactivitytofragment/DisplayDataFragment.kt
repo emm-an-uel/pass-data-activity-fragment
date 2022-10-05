@@ -1,6 +1,7 @@
 package com.example.senddatafromactivitytofragment
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -29,8 +30,17 @@ class DisplayDataFragment : Fragment() {
         tvGender = view.findViewById(R.id.tvGender)
 
         val bundle = arguments
-        // val name = bundle!!.getString("id")
+        val listPerson: ArrayList<Person> = bundle!!.getParcelableArrayList("listPerson")!!
+        //Log.i("listPerson", listPerson.toString())
 
-        // tvName.text = name
+        // find the latest addition to listPerson
+        val lastPerson = listPerson[listPerson.size -1]
+        val name = lastPerson.name
+        val age = lastPerson.age
+        val gender = lastPerson.gender
+
+        tvName.text = name
+        tvAge.text = age
+        tvGender.text = gender
     }
 }
