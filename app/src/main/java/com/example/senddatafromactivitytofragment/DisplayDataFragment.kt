@@ -33,7 +33,7 @@ class DisplayDataFragment : Fragment() {
         val listPerson: ArrayList<Person> = bundle!!.getParcelableArrayList("listPerson")!!
         //Log.i("listPerson", listPerson.toString())
 
-        // find the latest addition to listPerson
+        // find and display the latest addition to listPerson
         val lastPerson = listPerson[listPerson.size -1]
         val name = lastPerson.name
         val age = lastPerson.age
