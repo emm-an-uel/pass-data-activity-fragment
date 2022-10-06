@@ -6,22 +6,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.fragment.app.FragmentResultListener
 import androidx.fragment.app.setFragmentResultListener
 
 class Fragment1 : Fragment() {
 
-    lateinit var person: Person
-
-    lateinit var tvName: TextView
-    lateinit var tvAge: TextView
-    lateinit var tvGender: TextView
+    lateinit var result: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        setFragmentResultListener("personKey") {requestKey, bundle ->
-            person = bundle.getParcelable("person")!!
-        }
     }
 
     override fun onCreateView(
@@ -34,12 +28,10 @@ class Fragment1 : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        tvName = view.findViewById(R.id.tvName)
-        tvAge = view.findViewById(R.id.tvAge)
-        tvGender = view.findViewById(R.id.tvGender)
-
-        tvName.text = person.name
-        tvAge.text = person.age
-        tvGender.text = person.gender
+        setFragmentResultListener("requestKey") { requestKey, bundle ->
+            result = bundle.getString("bundleKey")!!
+            val tvName = view.findViewById<TextView>(R.id.tvName)
+            tvName.text = result
+        }
     }
 }

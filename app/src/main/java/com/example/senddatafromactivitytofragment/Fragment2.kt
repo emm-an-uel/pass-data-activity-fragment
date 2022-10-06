@@ -13,10 +13,8 @@ class Fragment2 : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        val person = requireArguments().get("person")
-
-        setFragmentResult("personKey", bundleOf("person" to person))
+        val result = "result"
+        setFragmentResult("requestKey", bundleOf("bundleKey" to result))
     }
 
     override fun onCreateView(
