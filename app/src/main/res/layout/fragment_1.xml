@@ -3,27 +3,30 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DisplayDataFragment">
+    tools:context=".Fragment1">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
         android:id="@+id/tvName"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:text="name" />
 
     <TextView
         android:id="@+id/tvAge"
         android:layout_width="match_parent"
-        android:layout_marginLeft="200dp"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:padding="10dp"
+        android:text="age" />
 
     <TextView
         android:id="@+id/tvGender"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="30dp"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:padding="10dp"
+        android:text="gender" />
 
 </FrameLayout>

@@ -8,30 +8,21 @@ import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
 
-    lateinit var etId: EditText
-    lateinit var etName: EditText
-    lateinit var etRoll: EditText
-    lateinit var btnSend: Button
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        etId = findViewById(R.id.etId)
-        etName = findViewById(R.id.etName)
-        etRoll = findViewById(R.id.etRoll)
-        btnSend = findViewById(R.id.btnSend)
+        val person = Person("John", "30", "Male")
 
-        btnSend.setOnClickListener {
-            val bundle = Bundle()
-            bundle.putString("id", etId.text.toString())
-            bundle.putString("name", etName.text.toString())
-            bundle.putString("roll", etRoll.text.toString())
+        val fragment2 = Fragment2()
+        val bundle = Bundle()
+        bundle.putParcelable("person", person)
+        fragment2.arguments = bundle
 
-            val intent = Intent(this, SecondActivity::class.java)
-            intent.putExtras(bundle)
-            startActivity(intent)
-        }
+
+        supportFragmentManager.beginTransaction().replace(R.id.frameLayout1, Fragment1()).commit()
+        supportFragmentManager.beginTransaction().replace(R.id.frameLayout2, fragment2).commit()
+
     }
 
 }

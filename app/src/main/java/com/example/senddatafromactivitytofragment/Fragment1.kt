@@ -1,25 +1,34 @@
 package com.example.senddatafromactivitytofragment
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.EditText
 import android.widget.TextView
+import androidx.fragment.app.setFragmentResultListener
 
-class DisplayDataFragment : Fragment() {
+class Fragment1 : Fragment() {
+
+    lateinit var person: Person
 
     lateinit var tvName: TextView
     lateinit var tvAge: TextView
     lateinit var tvGender: TextView
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        setFragmentResultListener("personName") {requestKey, bundle ->
+            person = bundle.getParcelable("person")!!
+        }
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View {
-        return inflater.inflate(R.layout.fragment_display_data, container, false)
+    ): View? {
+        return inflater.inflate(R.layout.fragment_1, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -29,18 +38,8 @@ class DisplayDataFragment : Fragment() {
         tvAge = view.findViewById(R.id.tvAge)
         tvGender = view.findViewById(R.id.tvGender)
 
-        val bundle = arguments
-        val listPerson: ArrayList<Person> = bundle!!.getParcelableArrayList("listPerson")!!
-        //Log.i("listPerson", listPerson.toString())
-
-        // find and display the latest addition to listPerson
-        val lastPerson = listPerson[listPerson.size -1]
-        val name = lastPerson.name
-        val age = lastPerson.age
-        val gender = lastPerson.gender
-
-        tvName.text = name
-        tvAge.text = age
-        tvGender.text = gender
+        tvName.text = person.name
+        tvAge.text = person.age
+        tvGender.text = person.gender
     }
 }
