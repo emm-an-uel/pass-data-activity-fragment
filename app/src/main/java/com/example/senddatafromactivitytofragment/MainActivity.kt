@@ -12,7 +12,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val person = Person("John", "30", "Male")
+        val person = Person("John", 30)
 
         val fragment2 = Fragment2()
         val bundle = Bundle()

@@ -8,10 +8,12 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.FragmentResultListener
 import androidx.fragment.app.setFragmentResultListener
+import org.w3c.dom.Text
 
 class Fragment1 : Fragment() {
 
-    lateinit var result: String
+    lateinit var tvName: TextView
+    lateinit var tvAge: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,10 +30,14 @@ class Fragment1 : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        setFragmentResultListener("requestKey") { requestKey, bundle ->
-            result = bundle.getString("bundleKey")!!
-            val tvName = view.findViewById<TextView>(R.id.tvName)
-            tvName.text = result
+        tvName = view.findViewById(R.id.tvName)
+        tvAge = view.findViewById(R.id.tvAge)
+
+        setFragmentResultListener("requestPerson") { requestKey, bundle ->
+            val person = bundle.getParcelable<Person>("bundlePerson")
+
+            tvName.text = person!!.name
+            tvAge.text = person.age.toString()
         }
     }
 }

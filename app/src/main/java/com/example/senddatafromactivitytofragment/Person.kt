@@ -6,6 +6,5 @@ import kotlinx.android.parcel.Parcelize
 @Parcelize
 class Person(
     val name: String,
-    val age: String,
-    val gender: String
+    val age: Int
     ) : Parcelable
