@@ -20,9 +20,9 @@ class SecondActivity : AppCompatActivity() {
 
         val bundle = intent.extras
         if (bundle != null) {
-            tvId.text = "id = ${bundle.getString("id")}"
-            tvName.text = "Name = ${bundle.getString("name")}"
-            tvRoll.text = "RollNo = ${bundle.getString("roll")}"
+            tvId.text = "name = ${bundle.getString("id")}"
+            tvName.text = "age = ${bundle.getString("name")}"
+            tvRoll.text = "gender = ${bundle.getString("roll")}"
         }
     }
 }
