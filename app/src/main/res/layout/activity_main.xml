@@ -22,7 +22,7 @@
         app:layout_constraintVertical_bias="0.247" />
 
     <EditText
-        android:id="@+id/etName"
+        android:id="@+id/etId"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Enter name"
@@ -33,36 +33,26 @@
         tools:layout_editor_absoluteX="0dp" />
 
     <EditText
-        android:id="@+id/etAge"
+        android:id="@+id/etName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:hint="Enter age"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etName"
+        app:layout_constraintTop_toBottomOf="@+id/etId"
         app:layout_constraintVertical_bias="0.037"
         tools:layout_editor_absoluteX="10dp" />
 
     <EditText
-        android:id="@+id/etGender"
+        android:id="@+id/etRoll"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:hint="Enter gender"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etAge"
+        app:layout_constraintTop_toBottomOf="@+id/etName"
         app:layout_constraintVertical_bias="0.047"
         tools:layout_editor_absoluteX="10dp" />
-
-    <Button
-        android:id="@+id/btnSave"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="save data"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/btnSend" />
 
     <Button
         android:id="@+id/btnSend"
@@ -72,15 +62,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etGender" />
-
-    <FrameLayout
-        android:id="@+id/frameLayout"
-        android:layout_width="409dp"
-        android:layout_height="160dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-    </FrameLayout>
+        app:layout_constraintTop_toBottomOf="@+id/etRoll" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
