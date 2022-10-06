@@ -16,6 +16,7 @@ class Fragment2 : Fragment() {
     lateinit var etName: EditText
     lateinit var etAge: EditText
     lateinit var btnSave: Button
+    lateinit var person: Person
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,7 +40,7 @@ class Fragment2 : Fragment() {
             val name = etName.text.toString()
             val age = etAge.text.toString().toInt()
 
-            val person = Person(name, age)
+            person = Person(name, age)
 
             setFragmentResult("requestPerson", bundleOf("bundlePerson" to person))
         }
