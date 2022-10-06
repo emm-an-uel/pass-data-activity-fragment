@@ -19,7 +19,7 @@ class Fragment1 : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        setFragmentResultListener("personName") {requestKey, bundle ->
+        setFragmentResultListener("personKey") {requestKey, bundle ->
             person = bundle.getParcelable("person")!!
         }
     }

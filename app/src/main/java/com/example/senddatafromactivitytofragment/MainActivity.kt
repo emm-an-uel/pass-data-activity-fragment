@@ -19,10 +19,8 @@ class MainActivity : AppCompatActivity() {
         bundle.putParcelable("person", person)
         fragment2.arguments = bundle
 
-
-        supportFragmentManager.beginTransaction().replace(R.id.frameLayout1, Fragment1()).commit()
         supportFragmentManager.beginTransaction().replace(R.id.frameLayout2, fragment2).commit()
-
+        supportFragmentManager.beginTransaction().replace(R.id.frameLayout1, Fragment1()).commit()
     }
 
 }

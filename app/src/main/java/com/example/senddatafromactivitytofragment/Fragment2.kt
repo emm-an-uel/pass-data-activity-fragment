@@ -6,6 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.core.os.bundleOf
+import androidx.fragment.app.setFragmentResult
 
 class Fragment2 : Fragment() {
 
@@ -13,6 +15,8 @@ class Fragment2 : Fragment() {
         super.onCreate(savedInstanceState)
 
         val person = requireArguments().get("person")
+
+        setFragmentResult("personKey", bundleOf("person" to person))
     }
 
     override fun onCreateView(
